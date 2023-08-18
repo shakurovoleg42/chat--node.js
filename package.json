@@ -24,5 +24,9 @@
   },
   "author": "Oleg Shakurov",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "github.com/shakurovoleg42/chat--node.js"
+  },
   "description": ""
 }
