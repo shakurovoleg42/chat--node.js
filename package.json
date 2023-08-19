@@ -26,7 +26,11 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shakurovoleg42/chat--node.js"
+    "url": "git+https://github.com/shakurovoleg42/chat--node.js.git"
   },
+  "bugs": {
+    "url": "https://github.com/shakurovoleg42/chat--node.js/issues"
+  },
+  "homepage": "https://github.com/shakurovoleg42/chat--node.js#readme",
   "description": ""
 }
