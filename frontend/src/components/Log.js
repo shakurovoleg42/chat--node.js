@@ -43,8 +43,7 @@ export default function Log() {
    style={{ minHeight: "100vh", minWidth: "100vw" }}
    className="d-flex justify-content-center align-items-center flex-column"
   >
-   <Form className="border rounded-1 p-4 text-start"
-   style={"background-color: #427fc1"}>
+   <Form className="border rounded-1 p-4 text-start">
     <Form.Group className="mb-3" controlId="formBasicEmail">
      <Form.Label>Name</Form.Label>
      <Form.Control
