@@ -20,14 +20,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-// Connect to MongooseDB
 connectDB().then((response) => {
  if (response) {
   const date = () => {
    const d = new Date();
    return `${d.getDay()}-${d.getMonth()}-${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}`;
   };
-  //Connect to Socket.io
+
   const client = new Server(server,{
    cors: {
     origin: "*",
@@ -36,7 +35,6 @@ connectDB().then((response) => {
   });
 
   client.on("connection", (socket) => {
-   // Create function to send status
    sendStatus = function (s) {
     socket.emit("status", s);
    };
@@ -119,17 +117,11 @@ connectDB().then((response) => {
          },
         },
        },
-       (err, messenger) => {
-        // sendStatus({
-        //  message: "Message sent successfully!",
-        //  clear: true,
-        // });
-       }
       );
      }
 
      if (amIExistOnRecipient) {
-      // add messenger message to user list
+
        await User.findOneAndUpdate(
        { _id: messenger_id, "all_messages.messenger_id": current_user_id },
        {
@@ -183,7 +175,6 @@ app.put("/gmail/user", async (req, res) => {
   return res.status(400).json({ message: "Invalid credentials" });
  }
 
- // Check if user exist
  let userName = await User.findOne({ name: name });
  if (userName) {
   return res.status(400).json({ message: "Username already taken" });
@@ -217,7 +208,6 @@ app.get("/gmail/user/:id", async (req, res) => {
 });
 
 
-// // Serve frontend
 if (process.env.NODE_ENV === "production") {
  app.use(express.static(path.join(__dirname, "../frontend/build")))
  app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')))
