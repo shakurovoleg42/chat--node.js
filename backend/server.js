@@ -45,8 +45,6 @@ connectDB().then((response) => {
     socket.emit("output", { userData: user, allUsersNameAndId });
    });
 
-
-   // Handle input events
    socket.on("input", async function (data) {
 
     
@@ -59,25 +57,20 @@ connectDB().then((response) => {
      body,
     } = data;
 
-
     client.sockets.emit('check', { sender: current_user_name, recipient_id: messenger_id})
     
-
-
-
-    // Check details are not empty
     if (
      messenger_name == "" ||
      messenger_id == "" ||
      title === "" ||
      body === ""
     ) {
-     // Send error status
+
      sendStatus(
       "You did not choose messenger or enter message title or message body. Plase fill all above"
      );
     } else {
-     // Check messenger existes
+
      const isMessengerExists = await User.findOne({
       _id: current_user_id,
       "all_messages.messenger_id": messenger_id,
@@ -89,7 +82,6 @@ connectDB().then((response) => {
      });
 
      if (isMessengerExists) {
-      // add messenger message to user list
       await User.findOneAndUpdate(
        { _id: current_user_id, "all_messages.messenger_id": messenger_id },
        {
