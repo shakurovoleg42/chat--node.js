@@ -2,7 +2,7 @@
  display: none;
 }
 body {
-  background-color: #4ef4e3;
+  background-color: hsl(174, 67%, 71%);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
