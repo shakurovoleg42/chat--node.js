@@ -45,7 +45,6 @@ export default function Log() {
   >
    <Form className="border rounded-1 p-4 text-start">
     <Form.Group className="mb-3" controlId="formBasicEmail">
-     <Form.Label>Name</Form.Label>
      <Form.Control
       type="text"
       placeholder="Enter name"
