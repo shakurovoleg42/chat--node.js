@@ -18,7 +18,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.8",
     "socket.io-client": "^4.5.2",
-    "t5": "file:..",
+    "chat": "file:..",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
